@@ -4,13 +4,15 @@
 #
 Name     : mvn-jsch
 Version  : 0.1.44
-Release  : 2
+Release  : 3
 URL      : https://sourceforge.net/projects/jsch/files/jsch/0.1.44/jsch-0.1.44.zip
 Source0  : https://sourceforge.net/projects/jsch/files/jsch/0.1.44/jsch-0.1.44.zip
 Source1  : https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.44-1/jsch-0.1.44-1.jar
 Source2  : https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.44-1/jsch-0.1.44-1.pom
 Source3  : https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.46/jsch-0.1.46.jar
 Source4  : https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.46/jsch-0.1.46.pom
+Source5  : https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.51/jsch-0.1.51.jar
+Source6  : https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.51/jsch-0.1.51.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause
@@ -47,6 +49,12 @@ cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.46
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.46
 cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.46
 
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.51
+cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.51
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.51
+cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.51
+
 
 %files
 %defattr(-,root,root,-)
@@ -57,3 +65,5 @@ cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.46
 /usr/share/java/.m2/repository/com/jcraft/jsch/0.1.44-1/jsch-0.1.44-1.pom
 /usr/share/java/.m2/repository/com/jcraft/jsch/0.1.46/jsch-0.1.46.jar
 /usr/share/java/.m2/repository/com/jcraft/jsch/0.1.46/jsch-0.1.46.pom
+/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.51/jsch-0.1.51.jar
+/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.51/jsch-0.1.51.pom
