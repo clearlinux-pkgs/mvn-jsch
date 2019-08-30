@@ -4,23 +4,26 @@
 #
 Name     : mvn-jsch
 Version  : 0.1.44
-Release  : 4
+Release  : 5
 URL      : https://sourceforge.net/projects/jsch/files/jsch/0.1.44/jsch-0.1.44.zip
 Source0  : https://sourceforge.net/projects/jsch/files/jsch/0.1.44/jsch-0.1.44.zip
-Source1  : https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.44-1/jsch-0.1.44-1.jar
-Source2  : https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.44-1/jsch-0.1.44-1.pom
-Source3  : https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.46/jsch-0.1.46.jar
-Source4  : https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.46/jsch-0.1.46.pom
-Source5  : https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.51/jsch-0.1.51.jar
-Source6  : https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.51/jsch-0.1.51.pom
-Source7  : https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.54/jsch-0.1.54.jar
-Source8  : https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.54/jsch-0.1.54.jar
-Source9  : https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.54/jsch-0.1.54.pom
-Source10  : https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.54/jsch-0.1.54.pom
+Source1  : https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.42/jsch-0.1.42.jar
+Source2  : https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.42/jsch-0.1.42.pom
+Source3  : https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.44-1/jsch-0.1.44-1.jar
+Source4  : https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.44-1/jsch-0.1.44-1.pom
+Source5  : https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.46/jsch-0.1.46.jar
+Source6  : https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.46/jsch-0.1.46.pom
+Source7  : https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.51/jsch-0.1.51.jar
+Source8  : https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.51/jsch-0.1.51.pom
+Source9  : https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.54/jsch-0.1.54.jar
+Source10  : https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.54/jsch-0.1.54.jar
+Source11  : https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.54/jsch-0.1.54.pom
+Source12  : https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.54/jsch-0.1.54.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause
 Requires: mvn-jsch-data = %{version}-%{release}
+Requires: mvn-jsch-license = %{version}-%{release}
 BuildRequires : apache-ant
 BuildRequires : buildreq-mvn
 
@@ -38,40 +41,57 @@ Group: Data
 data components for the mvn-jsch package.
 
 
+%package license
+Summary: license components for the mvn-jsch package.
+Group: Default
+
+%description license
+license components for the mvn-jsch package.
+
+
 %prep
+%setup -q -n jsch-0.1.44
 
 %build
 
 %install
-mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.44-1
-cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.44-1/jsch-0.1.44-1.jar
+mkdir -p %{buildroot}/usr/share/package-licenses/mvn-jsch
+cp LICENSE.txt %{buildroot}/usr/share/package-licenses/mvn-jsch/LICENSE.txt
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.42
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.42/jsch-0.1.42.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.42
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.42/jsch-0.1.42.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.44-1
-cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.44-1/jsch-0.1.44-1.pom
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.44-1/jsch-0.1.44-1.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.44-1
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.44-1/jsch-0.1.44-1.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.46
-cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.46/jsch-0.1.46.jar
+cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.46/jsch-0.1.46.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.46
-cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.46/jsch-0.1.46.pom
+cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.46/jsch-0.1.46.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.51
-cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.51/jsch-0.1.51.jar
+cp %{SOURCE7} %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.51/jsch-0.1.51.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.51
-cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.51/jsch-0.1.51.pom
+cp %{SOURCE8} %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.51/jsch-0.1.51.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.54
-cp %{SOURCE7} %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.54/jsch-0.1.54.jar
+cp %{SOURCE9} %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.54/jsch-0.1.54.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.54
-cp %{SOURCE8} %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.54/jsch-0.1.54.jar
+cp %{SOURCE10} %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.54/jsch-0.1.54.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.54
-cp %{SOURCE9} %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.54/jsch-0.1.54.pom
+cp %{SOURCE11} %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.54/jsch-0.1.54.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.54
-cp %{SOURCE10} %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.54/jsch-0.1.54.pom
+cp %{SOURCE12} %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.54/jsch-0.1.54.pom
 
 
 %files
@@ -79,6 +99,8 @@ cp %{SOURCE10} %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.54
 
 %files data
 %defattr(-,root,root,-)
+/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.42/jsch-0.1.42.jar
+/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.42/jsch-0.1.42.pom
 /usr/share/java/.m2/repository/com/jcraft/jsch/0.1.44-1/jsch-0.1.44-1.jar
 /usr/share/java/.m2/repository/com/jcraft/jsch/0.1.44-1/jsch-0.1.44-1.pom
 /usr/share/java/.m2/repository/com/jcraft/jsch/0.1.46/jsch-0.1.46.jar
@@ -87,3 +109,7 @@ cp %{SOURCE10} %{buildroot}/usr/share/java/.m2/repository/com/jcraft/jsch/0.1.54
 /usr/share/java/.m2/repository/com/jcraft/jsch/0.1.51/jsch-0.1.51.pom
 /usr/share/java/.m2/repository/com/jcraft/jsch/0.1.54/jsch-0.1.54.jar
 /usr/share/java/.m2/repository/com/jcraft/jsch/0.1.54/jsch-0.1.54.pom
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/mvn-jsch/LICENSE.txt
