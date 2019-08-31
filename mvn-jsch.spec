@@ -4,7 +4,7 @@
 #
 Name     : mvn-jsch
 Version  : 0.1.44
-Release  : 5
+Release  : 6
 URL      : https://sourceforge.net/projects/jsch/files/jsch/0.1.44/jsch-0.1.44.zip
 Source0  : https://sourceforge.net/projects/jsch/files/jsch/0.1.44/jsch-0.1.44.zip
 Source1  : https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.42/jsch-0.1.42.jar
